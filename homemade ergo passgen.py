@@ -5,31 +5,48 @@ import os
 digits = ['!', '@', '#', '$', '%', '+', '=', '*', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n',
           'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',  'J',
           'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5',
-          '6', '7', '8', '9']
+          '6', '7', '8', '9'
+         ]
 cap_digits = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-              'V', 'W', 'X', 'Y', 'Z']
+              'V', 'W', 'X', 'Y', 'Z'
+             ]
 lower_digits = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-                'v', 'w', 'x', 'y', 'z']
-num_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+                'v', 'w', 'x', 'y', 'z'
+               ]
+num_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+             ]
 left_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4', '5', '!',
-               '@', '#', '$', '%', 'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B']
-right_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0', '+', '=', '*', '?', 'Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M']
-left_cap_digits = ['Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B']
-right_cap_digits = ['Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M']
-left_lower_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b']
-right_lower_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm']
-left_num_digits = ['1', '2', '3', '4', '5']
-right_num_digits = ['6', '7', '8', '9', '0']
-left_sym_digits = ['!', '@', '#', '$', '%']
-right_sym_digits = ['+', '=', '*', '?']
-left_digits_nosymbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4',
-                        '5',
-                        'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B']
+               '@', '#', '$', '%', 'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
+              ]
+right_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0', '+', '=', '*', '?', 'Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+               ]
+left_cap_digits = ['Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
+                  ]
+right_cap_digits = ['Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+                   ]
+left_lower_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b'
+                    ]
+right_lower_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm'
+                     ]
+left_num_digits = ['1', '2', '3', '4', '5'
+                  ]
+right_num_digits = ['6', '7', '8', '9', '0'
+                   ]
+left_sym_digits = ['!', '@', '#', '$', '%'
+                  ]
+right_sym_digits = ['+', '=', '*', '?'
+                   ]
+left_digits_nosymbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4', '5',
+                        'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
+                       ]
 right_digits_nosymbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0', 'Y', 'U',
-                         'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M']
+                         'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+                        ]
 left_lower_digits_nosymbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3',
-                              '4', '5']
-right_lower_digits_nosymbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0']
+                              '4', '5'
+                             ]
+right_lower_digits_nosymbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0'
+                              ]
 
 
 def generate_digit(digits_generated, digits_left, digits_right):
