@@ -2,51 +2,55 @@ import secrets
 import os
 
 # digit lists
-digits = ['!', '@', '#', '$', '%', '+', '=', '*', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n',
-          'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',  'J',
-          'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5',
-          '6', '7', '8', '9'
-         ]
-cap_digits = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-              'V', 'W', 'X', 'Y', 'Z'
-             ]
-lower_digits = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-                'v', 'w', 'x', 'y', 'z'
-               ]
-num_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-             ]
-left_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4', '5', '!',
-               '@', '#', '$', '%', 'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
+digits = ['!', '@', '#', '$', '%', '+', '=', '*', 'a', 'b', 'c', 'd', 'e', 'f',
+          'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+          'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',  'J',
+          'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+          'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+          ]
+cap_digits = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N',
+              'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
               ]
-right_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0', '+', '=', '*', '?', 'Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+lower_digits = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n',
+                'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                ]
+num_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+left_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c',
+               'v', 'b', '1', '2', '3', '4', '5', '!',
+               '@', '#', '$', '%', 'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F',
+               'G', 'Z', 'X', 'C', 'V', 'B'
                ]
-left_cap_digits = ['Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
-                  ]
-right_cap_digits = ['Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+right_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8',
+                '9', '0', '+', '=', '*', '?', 'Y', 'U', 'O', 'P', 'H', 'J', 'K',
+                'L', 'N', 'M'
+                ]
+left_cap_digits = ['Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X',
+                   'C', 'V', 'B'
                    ]
-left_lower_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b'
-                    ]
-right_lower_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm'
+right_cap_digits = ['Y', 'U', 'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M']
+left_lower_digits = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x',
+                     'c', 'v', 'b'
                      ]
-left_num_digits = ['1', '2', '3', '4', '5'
-                  ]
-right_num_digits = ['6', '7', '8', '9', '0'
-                   ]
-left_sym_digits = ['!', '@', '#', '$', '%'
-                  ]
-right_sym_digits = ['+', '=', '*', '?'
-                   ]
-left_digits_nosymbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4', '5',
-                        'Q', 'W', 'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C', 'V', 'B'
-                       ]
-right_digits_nosymbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0', 'Y', 'U',
-                         'O', 'P', 'H', 'J', 'K', 'L', 'N', 'M'
+right_lower_digits = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm']
+left_num_digits = ['1', '2', '3', '4', '5']
+right_num_digits = ['6', '7', '8', '9', '0']
+left_sym_digits = ['!', '@', '#', '$', '%']
+right_sym_digits = ['+', '=', '*', '?']
+left_digits_no_symbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z',
+                         'x', 'c', 'v', 'b', '1', '2', '3', '4', '5', 'Q', 'W',
+                         'E', 'R', 'T', 'A', 'S', 'D', 'F', 'G', 'Z', 'X', 'C',
+                         'V', 'B'
                         ]
-left_lower_digits_nosymbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', '1', '2', '3',
-                              '4', '5'
-                             ]
-right_lower_digits_nosymbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6', '7', '8', '9', '0'
-                              ]
+right_digits_no_symbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm', '6',
+                          '7', '8', '9', '0', 'Y', 'U', 'O', 'P', 'H', 'J', 'K',
+                          'L', 'N', 'M'
+                          ]
+left_lower_digits_no_symbol = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g',
+                               'z', 'x', 'c', 'v', 'b', '1', '2', '3', '4', '5'
+                               ]
+right_lower_digits_no_symbol = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'n', 'm',
+                                '6', '7', '8', '9', '0'
+                                ]
 
 
 def generate_digit(digits_generated, digits_left, digits_right):
@@ -84,23 +88,31 @@ while loop_variable == 1:
     # middle letters
     length = length - 3  # offset for last 3
 
-    while digits_generated < length: 
-        if password_final.isupper(): # after first lowercase, all lowercase thereafter
-            password_final += generate_digit(digits_generated, left_digits_nosymbol, right_digits_nosymbol)
+    while digits_generated < length:
+        # after first lowercase, all lowercase thereafter
+        if password_final.isupper():
+            password_final += generate_digit(digits_generated,
+                                             left_digits_no_symbol,
+                                             right_digits_no_symbol)
         else:
-            password_final += generate_digit(digits_generated, left_lower_digits_nosymbol, right_lower_digits_nosymbol)
+            password_final += generate_digit(digits_generated,
+                                             left_lower_digits_no_symbol,
+                                             right_lower_digits_no_symbol)
         digits_generated += 1
 
     # third to last letter is a guaranteed lowercase
-    password_final += generate_digit(digits_generated, left_lower_digits, right_lower_digits)
+    password_final += generate_digit(digits_generated, left_lower_digits,
+                                     right_lower_digits)
     digits_generated += 1
 
     # second to last digit is a number
-    password_final += generate_digit(digits_generated, left_num_digits, right_num_digits)
+    password_final += generate_digit(digits_generated, left_num_digits,
+                                     right_num_digits)
     digits_generated += 1
 
     # last digit is a symbol
-    password_final += generate_digit(digits_generated, left_sym_digits, right_sym_digits)
+    password_final += generate_digit(digits_generated, left_sym_digits,
+                                     right_sym_digits)
     digits_generated += 1
     
     "".join(password_final)
